@@ -1,0 +1,16 @@
+# Provider Page
+twitter_page: "https://twitter.com/"
+facebook_page: "https://www.facebook.com/"
+github_page: "https://github.com/"
+
+# アプリケーション名
+app_name: "YGEN"
+
+# プログラマTwitterID
+programmer_twitter_id: "Yuryu"
+
+# デザイナーTwitterID
+designer_twitter_id: "Yuryu"
+
+# 曜日
+weekday: ["日", "月", "火", "水", "木", "金", "土"]

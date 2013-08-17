@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Template set</th>
+			<th>Post</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%- @user.templatesets.each do |t| %>
+		<tr>
+			<td><%= link_to t.name, edit_templateset_path(t) %></td>
+			<td><%= link_to "Post", templateset_path(t) %></td>
+		</tr>
+		<%- end %>
+	</tbody>
+</table>
+
+<%= link_to "New template set", new_templateset_path %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,39 @@
+<%= form_for(@templateset) do |f| %>
+  <% if @templateset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div id="format_fields">
+
+    <%= f.fields_for :templates do |t| %>
+      <div class="field">
+        <%= t.label :format %><br>
+        <%= t.text_field :format %>
+        
+        <input type="button" class="deletebutton" value="-" />
+        <%= t.hidden_field :_destroy %>
+      </div>
+    <% end %>
+  </div>
+
+    <div class="field">
+      <input type="button" id="newbutton" value="+" />
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
